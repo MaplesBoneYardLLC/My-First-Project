@@ -19,35 +19,20 @@
       font-family: Arial, sans-serif;
       color: #f5f1eb;
       line-height: 1.6;
-      background:
-        radial-gradient(circle at top, rgba(190, 150, 100, 0.12), transparent 28%),
-        radial-gradient(circle at bottom right, rgba(120, 20, 20, 0.12), transparent 24%),
-        linear-gradient(180deg, #0b0909 0%, #120d0d 45%, #060505 100%);
-      background-attachment: fixed;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.08;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-      background-size: 80px 80px;
-      mix-blend-mode: soft-light;
+      background: #070606;
     }
 
     nav {
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      width: 100%;
       z-index: 100;
       display: flex;
       justify-content: center;
-      gap: 32px;
-      padding: 18px 20px;
-      background: rgba(8, 6, 6, 0.82);
+      gap: 34px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.35);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
@@ -57,7 +42,7 @@
       text-decoration: none;
       font-size: 13px;
       font-weight: 700;
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
       text-transform: uppercase;
       transition: 0.2s ease;
     }
@@ -67,14 +52,14 @@
     }
 
     .hero {
+      position: relative;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 90px 20px 70px;
-      position: relative;
+      padding: 120px 20px 80px;
+      text-align: center;
       overflow: hidden;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     .hero::before {
@@ -82,10 +67,15 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.72)),
-        url("hero-image.jpg") center/cover no-repeat;
+        linear-gradient(
+          180deg,
+          rgba(0,0,0,0.45) 0%,
+          rgba(0,0,0,0.55) 35%,
+          rgba(0,0,0,0.72) 100%
+        ),
+        url("hero.jpg") center center / cover no-repeat;
       transform: scale(1.03);
-      filter: contrast(110%) brightness(70%) saturate(95%);
+      filter: contrast(110%) brightness(70%);
     }
 
     .hero::after {
@@ -93,40 +83,39 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at center, transparent 35%, rgba(0,0,0,0.55) 100%);
+        radial-gradient(circle at top, rgba(215,180,125,0.10), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(120,20,20,0.14), transparent 24%);
       pointer-events: none;
     }
 
     .hero-inner {
       position: relative;
       z-index: 2;
-      max-width: 1000px;
-      text-align: center;
+      max-width: 1050px;
     }
 
     .brand-pill {
       display: inline-block;
       padding: 8px 16px;
-      border: 1px solid rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.16);
       border-radius: 999px;
       font-size: 12px;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: #f0dfc4;
-      margin-bottom: 24px;
       background: rgba(255,255,255,0.04);
-      box-shadow: 0 0 20px rgba(215, 180, 125, 0.08);
+      margin-bottom: 24px;
     }
 
-    h1 {
-      font-size: clamp(48px, 8vw, 96px);
-      line-height: 0.95;
-      margin-bottom: 24px;
+    .hero h1 {
+      font-size: clamp(52px, 8vw, 100px);
+      line-height: 0.92;
       letter-spacing: -2px;
       text-transform: uppercase;
+      margin-bottom: 24px;
       text-shadow:
-        0 0 20px rgba(255,255,255,0.08),
-        0 0 40px rgba(160, 80, 40, 0.08);
+        0 0 18px rgba(255,255,255,0.10),
+        0 0 40px rgba(0,0,0,0.35);
     }
 
     .hero p {
@@ -139,20 +128,19 @@
     .buttons {
       display: flex;
       justify-content: center;
-      gap: 16px;
       flex-wrap: wrap;
-      margin-bottom: 50px;
+      gap: 16px;
+      margin-bottom: 60px;
     }
 
     .btn {
       display: inline-block;
-      padding: 14px 24px;
+      padding: 14px 26px;
       border-radius: 14px;
       text-decoration: none;
       font-weight: 700;
-      transition: 0.2s ease;
-      border: 1px solid transparent;
-      letter-spacing: 0.5px;
+      transition: 0.25s ease;
+      letter-spacing: 0.4px;
     }
 
     .btn:hover {
@@ -160,39 +148,58 @@
     }
 
     .btn.primary {
-      background: #f3eee7;
+      background: #f5f1eb;
       color: #111;
     }
 
     .btn.secondary {
       background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.16);
       color: #f5f1eb;
+      border: 1px solid rgba(255,255,255,0.16);
     }
 
     .btn.secondary:hover {
-      border-color: rgba(215, 180, 125, 0.35);
+      border-color: rgba(215,180,125,0.35);
       color: #d7b47d;
     }
 
     .art-preview {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 22px;
       flex-wrap: wrap;
+      margin-top: 20px;
     }
 
-    .art-preview img {
-      width: 250px;
+    .art-card {
+      width: 260px;
+      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+      backdrop-filter: blur(4px);
+      transition: 0.25s ease;
+    }
+
+    .art-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(215,180,125,0.22);
+    }
+
+    .art-card img {
+      width: 100%;
       height: 320px;
       object-fit: cover;
-      border-radius: 18px;
+      display: block;
       filter: contrast(110%) brightness(88%);
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow:
-        0 16px 35px rgba(0,0,0,0.45),
-        0 0 18px rgba(215, 180, 125, 0.06);
-      background: #111;
+    }
+
+    .art-card p {
+      padding: 14px 14px 16px;
+      color: #ddd2c5;
+      font-size: 14px;
+      letter-spacing: 0.4px;
     }
 
     .section {
@@ -207,6 +214,7 @@
       margin-bottom: 14px;
       text-transform: uppercase;
       letter-spacing: 1px;
+      color: #f3e9dc;
     }
 
     .section-subtitle {
@@ -224,22 +232,12 @@
     }
 
     .card {
-      position: relative;
       background:
         linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 22px;
       padding: 28px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.28);
-      overflow: hidden;
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top left, rgba(215,180,125,0.08), transparent 35%);
-      pointer-events: none;
     }
 
     .card h3 {
@@ -275,7 +273,7 @@
       text-align: center;
       padding: 32px 20px 50px;
       color: #b8aea2;
-      background: rgba(0,0,0,0.25);
+      background: rgba(0,0,0,0.35);
     }
 
     footer p:first-child {
@@ -295,13 +293,12 @@
       }
 
       .hero {
-        padding-top: 70px;
+        padding-top: 110px;
       }
 
-      .art-preview img {
-        width: 90%;
+      .art-card {
+        width: 92%;
         max-width: 320px;
-        height: auto;
       }
     }
   </style>
@@ -322,7 +319,7 @@
 
       <p>
         Life and death in harmony. Calm, stylish, meaningful pieces built through
-        gothic, tattoo-inspired artwork and print-focused design.
+        gothic, tattoo-inspired artwork and bold print-focused design.
       </p>
 
       <div class="buttons">
@@ -330,11 +327,22 @@
         <a href="#collections" class="btn secondary">View Collections</a>
       </div>
 
-      <section class="art-preview">
-        <img src="/art1.png" alt="Maples Bone Yard Design 1">
-        <img src="/art2.png" alt="Maples Bone Yard Design 2">
-        <img src="/art3.png" alt="Maples Bone Yard Design 3">
-      </section>
+      <div class="art-preview">
+        <div class="art-card">
+          <img src="art1.png" alt="Maples Bone Yard Design 1">
+          <p>Maples Bone Yard Design 1</p>
+        </div>
+
+        <div class="art-card">
+          <img src="art2.png" alt="Maples Bone Yard Design 2">
+          <p>Maples Bone Yard Design 2</p>
+        </div>
+
+        <div class="art-card">
+          <img src="art3.png" alt="Maples Bone Yard Design 3">
+          <p>Maples Bone Yard Design 3</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -382,4 +390,3 @@
 
 </body>
 </html>
-
