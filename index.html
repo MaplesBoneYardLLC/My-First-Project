@@ -1,53 +1,244 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maples Bone Yard</title>
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      background: #0a0a0a;
-      color: #f1f1f1;
-      font-family: Arial;
+      font-family: Arial, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 30%),
+        linear-gradient(180deg, #090909 0%, #120d12 45%, #0a0a0a 100%);
+      color: #f5f2ef;
+      line-height: 1.6;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 40px;
+      padding: 40px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
-    h1 { font-size: 50px; }
-    .box {
-      border: 1px solid #333;
-      padding: 20px;
-      margin: 20px;
-      border-radius: 20px;
+
+    .hero-inner {
+      max-width: 900px;
     }
-    a {
-      background: white;
-      color: black;
-      padding: 12px 20px;
-      text-decoration: none;
-      border-radius: 10px;
+
+    .eyebrow {
       display: inline-block;
-      margin-top: 20px;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 999px;
+      padding: 8px 16px;
+      margin-bottom: 24px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #d0c9c9;
+      background: rgba(255,255,255,0.03);
+    }
+
+    h1 {
+      font-size: clamp(48px, 8vw, 96px);
+      line-height: 0.95;
+      margin-bottom: 24px;
+      letter-spacing: -2px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto 32px;
+      font-size: clamp(18px, 2vw, 24px);
+      color: #d7d0d0;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: 0.2s ease;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: #f5f2ef;
+      color: #111;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #f5f2ef;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 90px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 40px;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #c7bebe;
+      max-width: 760px;
+      margin: 0 auto 50px;
+      font-size: 18px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 28px;
+      min-height: 200px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .card h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #d2cbcb;
+    }
+
+    .vision {
+      text-align: center;
+      max-width: 850px;
+    }
+
+    .vision p {
+      color: #d0c9c9;
+      font-size: 20px;
+      margin-top: 18px;
+    }
+
+    .footer-cta {
+      text-align: center;
+      padding-bottom: 100px;
+    }
+
+    .footer-cta h2 {
+      font-size: 42px;
+      margin-bottom: 16px;
+    }
+
+    .footer-cta p {
+      color: #cfc7c7;
+      margin-bottom: 28px;
+      font-size: 18px;
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+      padding: 24px 20px 40px;
+      color: #9f9696;
+      font-size: 14px;
     }
   </style>
 </head>
-
 <body>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Maples Bone Yard</div>
+      <h1>Eerie, organic art for people who feel deeply.</h1>
+      <p>
+        Life and death in harmony. Calm, stylish, meaningful pieces built through
+        gothic, tattoo-inspired artwork and print-focused design.
+      </p>
+      <div class="buttons">
+        <a class="btn btn-primary" href="https://maplesboneyard.com" target="_blank">Shop the Store</a>
+        <a class="btn btn-secondary" href="#collections">View Collections</a>
+      </div>
+    </div>
+  </section>
 
-<h1>Maples Bone Yard</h1>
-<p>Eerie. Organic. Life and death in harmony.</p>
+  <section class="section" id="collections">
+    <h2 class="section-title">Collections</h2>
+    <p class="section-subtitle">
+      Built around mood, story, and identity — every collection carries its own
+      atmosphere while staying rooted in the same visual world.
+    </p>
 
-<a href="https://maplesboneyard.com">Visit Store</a>
+    <div class="grid">
+      <div class="card">
+        <h3>Honey and Grit</h3>
+        <p>A rugged mix of eerie beauty, warmth, and hard edges.</p>
+      </div>
+      <div class="card">
+        <h3>Long Road</h3>
+        <p>Road-worn, symbolic artwork built around endurance, memory, and motion.</p>
+      </div>
+      <div class="card">
+        <h3>Little Bones</h3>
+        <p>A youth line with bold, imaginative pieces for wild hearts and deep thinkers.</p>
+      </div>
+      <div class="card">
+        <h3>Aware and Unafraid</h3>
+        <p>Designs centered on resilience, awareness, and quiet strength.</p>
+      </div>
+    </div>
+  </section>
 
-<div class="box">
-  <h2>Collections</h2>
-  <p>Honey and Grit</p>
-  <p>Long Road</p>
-  <p>Little Bones</p>
-  <p>Aware and Unafraid</p>
-</div>
+  <section class="section vision">
+    <h2 class="section-title">The Vision</h2>
+    <p>
+      Not just spooky — calm, stylish, meaningful. Maples Bone Yard lives in the
+      space between hard edges and soft light, decay and beauty, grit and grace.
+    </p>
+  </section>
 
-<div class="box">
-  <h2>Vision</h2>
-  <p>Not just spooky — calm, stylish, meaningful.</p>
-</div>
+  <section class="section footer-cta">
+    <h2>Wear the story.</h2>
+    <p>Explore the latest drops, artwork, and collection-driven pieces.</p>
+    <div class="buttons">
+      <a class="btn btn-primary" href="https://maplesboneyard.com" target="_blank">Visit Store</a>
+    </div>
+  </section>
 
+  <footer>
+    Maples Bone Yard — eerie, organic, and built to endure.
+  </footer>
 </body>
 </html>
+
+
