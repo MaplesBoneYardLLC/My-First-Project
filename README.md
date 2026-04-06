@@ -30,5 +30,5 @@ Not just spooky - calm, stylish, meaningful. Every piece tells a story between l
 ---
 
 ## Connect
-Facebook:
-Shop:
+- Facebook:
+- Shop:
